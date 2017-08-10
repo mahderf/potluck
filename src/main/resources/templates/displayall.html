@@ -6,29 +6,31 @@
 </head>
 <body>
 
-<table>
-    <tr>
-        <th>UUID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Dish</th>
+<div class="container">
+    <h2>Potluck List</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Dish</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item: ${cd}">
+            <td th:text="${item.uuid}"></td>
+            <td th:text="${item.firstname}"></td>
+            <td th:text="${item.lastname}"></td>
+            <td th:text="${item.dish}"></td>
+        </tr>
 
-    </tr>
+        </tbody>
 
-    <tr th:each="item : ${cd}">
-        <td th:text="${item.uuid}"></td>
-        <td th:text="${item.firstname}"></td>
-        <td th:text="${item.lastname}"></td>
-        <td th:text="${item.dish}"></td>
-
-
-
-    </tr>
-
-</table>
-
-<a href="/chefresult"> Search by Chef </a><br/>
-<a href="/dishresult"> Search by Dish</a><br/>
-<a href="/adish">Add another Dish</a>
+    </table>
+</div>
+<a href="/chefresult" class="btn btn-dark btn-lg">Search by Chef</a>
+<a href="/dishresult" class="btn btn-dark btn-lg">Search by Dish</a>
+<a href="/adish" class="btn btn-dark btn-lg">Add another Dish</a>
 </body>
 </html>
