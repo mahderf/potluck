@@ -55,7 +55,7 @@ public class MainControllers {
         return "displayall";
     }
 
-    @GetMapping("/chefresult")
+    @GetMapping("/searchchef")
     public String chefSearch(Model model)
     {
 
@@ -63,20 +63,33 @@ public class MainControllers {
         return "searchchef";
     }
 
-    @PostMapping("/chefresult")
-    public String searchChefMethod(@ModelAttribute("searchChef") ChefandDish chefsearchdish)
+    @PostMapping("/searchchef")
+    public String searchChefMethod(@ModelAttribute("searchChef") ChefandDish chefsearchdish, Model model)
     {
-        Iterable<ChefandDish>  searchChef= potluckRepo.findAllByFirstname(sc);
-    return "chefresult";
+
+        Iterable<ChefandDish>  listChef= potluckRepo.findAllByFirstname(chefsearchdish.getFirstname());
+        model.addAttribute("lchef",listChef);
+
+         return "chefresult";
     }
 
 
-//    @PostMapping("/dishresult")
-//    public String dishSearch(ChefandDish chefsearchdish)
-//    {
-//        Iterable<ChefandDish>  searchDish= potluckRepo.findAllByDish(chefsearchdish.getDish());
-//        return "dishresult";
-//    }
+    @GetMapping("/searchdish")
+    public String dishsearch(Model model)
+    {
+
+        model.addAttribute("searchDish",new ChefandDish());
+        return "searchdish";
+    }
+    @PostMapping("/searchdish")
+    public String searchDishMethod(@ModelAttribute("searchDish") ChefandDish chefsearchdish, Model model)
+    {
+
+        Iterable<ChefandDish>  listDish= potluckRepo.findAllByDishContains(chefsearchdish.getDish());
+        model.addAttribute("ldish",listDish);
+
+        return "dishresult";
+    }
 
 
 

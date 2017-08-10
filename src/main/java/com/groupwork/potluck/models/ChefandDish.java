@@ -1,11 +1,14 @@
 package com.groupwork.potluck.models;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
+@Entity
 public class ChefandDish {
 
     @Id
@@ -15,11 +18,11 @@ public class ChefandDish {
 
     @NotNull
     @Size(min=2, max=15)
-    private String firstname;
+    private String firstname=" ";
 
     private String lastname;
 
-    private String sc;
+//    private String sc;
 
     @NotNull
     @Size(min=5, max=15)
@@ -57,12 +60,12 @@ public class ChefandDish {
         this.dish = dish;
     }
 
-    public String getSc() {
-        return sc;
-    }
-
-    public void setSc(String sc) {
-        this.sc = sc;
-    }
+//    public String getSc() {
+//        return sc;
+//    }
+//
+//    public void setSc(String sc) {
+//        this.sc = sc;
+//    }
 }
 

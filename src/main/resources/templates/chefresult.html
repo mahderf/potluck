@@ -15,7 +15,7 @@
 
     </tr>
 
-    <tr th:each="item : ${searchChef}">
+    <tr th:each="item : ${lchef}">
         <td th:text="${item.uuid}"></td>
         <td th:text="${item.firstname}"></td>
         <td th:text="${item.lastname}"></td>
@@ -27,8 +27,8 @@
 
 </table>
 
-<a href="/chefresult"> Search by Chef </a><br/>
-<a href="/dishresult"> Search by Dish</a><br/>
+<a href="/searchchef"> Search by Chef </a><br/>
+<a href="/searchdish"> Search by Dish</a><br/>
 <a href="/adish">Add another Dish</a>
 </body>
 </html>
