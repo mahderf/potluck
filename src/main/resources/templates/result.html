@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Show dish added</title>
+    <meta http-equiv="Content-Type" content = "text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Result</h1>
+<p>You have succesffuly added your dish</p>
+<p th:text="'UUID:'+ ${newcd.uuid}"/>
+<p th:text="'Your First Name:'+ ${newcd.firstname}"/>
+<p th:text="'Your Last Name:'+ ${newcd.lastname}" />
+<p th:text="'Dish :'+ ${newcd.dish}" />
+
+<a href="/chefresult"> Search by Chef </a><br/>
+<a href="/dishresult"> Search by Dish</a><br/>
+<a href="/displayall">Display all Dishes and Chefs</a><br/>
+<a href="/adish">Add another Dish</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Submission</title>
+    <meta http-equiv="Content-Type" content = "text/html; charset=UTF-8" />
+</head>
+<body>
+<p>This is dish addition page:</p>
+<h1>Entry Form</h1>
+<form action = "#" th:action="@{/adish}" th:object="${newcd}" method="post">
+
+
+    <p>Enter your First Name: <input type="text" th:field="*{firstname}" /></p>
+    <span th:if="${#fields.hasErrors('firstname')}" th:error="*{firstname}"> First Name is required </span>
+
+    <p>Enter your Last Name: <input type="text" th:field="*{lastname}" /></p>
+
+    <p>Enter Dish Name: <input type="text" th:field="*{dish}" /></p>
+    <span th:if="${#fields.hasErrors('dish')}" th:error="*{dish}">Your food doesnt taste good</span>
+
+
+    <p><input type="submit" value="Add a Chef" /> <input type="reset" value="Reset" /> </p>
+    <a href="/chefresult"> Search by Chef </a><br/>
+    <a href="/dishresult"> Search by Dish</a>
+</form>
+</body>
+</html>

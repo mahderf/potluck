@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content = "text/html; charset=UTF-8"/>
+    <title>Putluck Database</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>UUID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Dish</th>
+
+    </tr>
+
+    <tr th:each="item : ${cd}">
+        <td th:text="${item.uuid}"></td>
+        <td th:text="${item.firstname}"></td>
+        <td th:text="${item.lastname}"></td>
+        <td th:text="${item.dish}"></td>
+
+
+
+    </tr>
+
+</table>
+
+<a href="/chefresult"> Search by Chef </a><br/>
+<a href="/dishresult"> Search by Dish</a><br/>
+<a href="/adish">Add another Dish</a>
+</body>
+</html>
